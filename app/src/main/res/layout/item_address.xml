@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Phần thông tin chính -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/recipientNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/editAddressButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Trần Thị Bích Hảo | 0987654321" />
+
+            <TextView
+                android:id="@+id/addressLineTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/editAddressButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recipientNameTextView"
+                tools:text="123 Đường ABC, Phường XYZ, Quận GHI, TP. Hồ Chí Minh" />
+
+            <ImageButton
+                android:id="@+id/deleteAddressButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Xóa địa chỉ"
+                android:src="@android:drawable/ic_menu_delete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@android:color/holo_red_dark" />
+
+            <ImageButton
+                android:id="@+id/editAddressButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Sửa địa chỉ"
+                android:src="@android:drawable/ic_menu_edit"
+                app:layout_constraintEnd_toStartOf="@+id/deleteAddressButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@android:color/darker_gray" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f0f0f0"
+            android:layout_marginHorizontal="16dp"/>
+
+        <!-- Khu vực hiển thị trạng thái mặc định -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <!-- Chỉ hiển thị khi đây LÀ địa chỉ mặc định -->
+            <TextView
+                android:id="@+id/defaultAddressTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓ Địa chỉ mặc định"
+                android:textColor="@color/purple_700"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <!-- Chỉ hiển thị khi đây KHÔNG PHẢI địa chỉ mặc định -->
+            <Button
+                android:id="@+id/setDefaultButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đặt làm mặc định"
+                android:layout_gravity="end"
+                android:visibility="visible"
+                tools:visibility="gone"/>
+        </FrameLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

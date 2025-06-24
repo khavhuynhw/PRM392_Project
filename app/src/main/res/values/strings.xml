@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Project_PRM392</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_drawer">Mở</string>
+    <string name="close_drawer">Đóng</string>
+    <string name="privacy_policy_content">
+        "**Chính sách bảo mật thông tin cá nhân**\n\n
+        **1. Mục đích thu thập thông tin cá nhân**\n
+        Chúng tôi thu thập thông tin cá nhân của bạn để:\n
+        - Xử lý đơn hàng, giao hàng và thanh toán.\n
+        - Cung cấp các dịch vụ hỗ trợ khách hàng.\n
+        - Gửi thông tin về các chương trình khuyến mãi, sản phẩm mới (nếu bạn đồng ý).\n\n
+        **2. Phạm vi sử dụng thông tin**\n
+        Thông tin cá nhân của bạn chỉ được sử dụng trong nội bộ công ty và cho các mục đích đã nêu. Chúng tôi cam kết không bán, chia sẻ hay trao đổi thông tin của bạn cho bất kỳ bên thứ ba nào khác vì mục đích thương mại.\n\n
+        **3. Thời gian lưu trữ thông tin**\n
+        Dữ liệu cá nhân của khách hàng sẽ được lưu trữ cho đến khi có yêu cầu hủy bỏ từ khách hàng. Còn lại trong mọi trường hợp thông tin cá nhân khách hàng sẽ được bảo mật trên máy chủ của chúng tôi.\n\n
+        **4. Cam kết bảo mật thông tin**\n
+        Chúng tôi cam kết bảo mật tuyệt đối thông tin cá nhân của bạn theo chính sách bảo vệ thông tin cá nhân của công ty và các quy định của pháp luật Việt Nam."
+    </string>
+</resources>

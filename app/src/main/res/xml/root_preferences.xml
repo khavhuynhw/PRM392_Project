@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Thông báo">
+
+        <SwitchPreferenceCompat
+            app:key="notifications_promo"
+            app:title="Nhận thông báo khuyến mãi"
+            app:summary="Bật để nhận các ưu đãi và mã giảm giá mới nhất."
+            app:icon="@drawable/ic_promo"
+            app:defaultValue="true"/>
+
+        <SwitchPreferenceCompat
+            app:key="notifications_order"
+            app:title="Cập nhật trạng thái đơn hàng"
+            app:summary="Nhận thông báo khi đơn hàng của bạn thay đổi trạng thái."
+            app:icon="@drawable/ic_shipping"
+            app:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Giao diện">
+
+        <ListPreference
+            app:key="dark_mode"
+            app:title="Chế độ tối (Dark Mode)"
+            app:summary="Chọn giao diện sáng, tối hoặc tự động theo hệ thống."
+            app:icon="@drawable/ic_dark_mode"
+            app:entries="@array/dark_mode_entries"
+            app:entryValues="@array/dark_mode_values"
+            app:defaultValue="system" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Tài khoản">
+
+        <Preference
+            app:key="change_password"
+            app:title="Đổi mật khẩu"
+            app:icon="@drawable/ic_password"
+            app:summary="Thay đổi mật khẩu đăng nhập của bạn."/>
+
+        <Preference
+            app:key="privacy_policy"
+            app:title="Chính sách bảo mật"
+            app:icon="@drawable/ic_policy"
+            app:summary="Xem chính sách bảo mật của chúng tôi."/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

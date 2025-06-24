@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chọn địa chỉ giao hàng"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="24dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addressDialogRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="400dp"
+        android:paddingBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/cancelDialogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HỦY"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimary"
+        android:padding="16dp"
+        android:layout_gravity="end"
+        android:background="?attr/selectableItemBackground"/>
+
+</LinearLayout>

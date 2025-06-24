@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/notification_order_1"
+        android:icon="@drawable/ic_shipping"
+        android:title="Đơn hàng #G12399 đang được giao" />
+
+    <item
+        android:id="@+id/notification_promo_1"
+        android:icon="@drawable/ic_promo"
+        android:title="Khuyến mãi 50% cho rau củ sạch" />
+
+    <item
+        android:id="@+id/notification_welcome"
+        android:icon="@drawable/ic_welcome"
+        android:title="Chào mừng bạn đến với App Rau Củ!" />
+
+</menu>

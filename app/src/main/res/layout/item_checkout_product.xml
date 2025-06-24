@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingVertical="4dp">
+
+    <TextView
+        android:id="@+id/checkoutProductNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/checkoutProductPriceTextView"
+        android:layout_marginEnd="8dp"
+        tools:text="Cải thìa ngọt VietGAP (x2)"/>
+
+    <TextView
+        android:id="@+id/checkoutProductPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        tools:text="30.000đ"/>
+
+</RelativeLayout>
