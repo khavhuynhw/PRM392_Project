@@ -26,6 +26,7 @@ import com.example.project_prm392.ui.cart.OrderHistoryActivity;
 import com.example.project_prm392.ui.profile.AddressBookActivity;
 import com.example.project_prm392.ui.profile.SettingsActivity;
 import com.example.project_prm392.ui.admin.AdminProductListActivity;
+import com.example.project_prm392.ui.admin.AdminOrderListActivity;
 import com.example.project_prm392.utils.AdminUtils;
 
 public class ProfileFragment extends Fragment {
@@ -37,6 +38,7 @@ public class ProfileFragment extends Fragment {
 
     private TextView orderHistoryTextView, addressBookTextView, settingsTextView;
     private TextView adminProductManagementTextView;
+    private TextView adminOrderManagementTextView;
     private Button logoutButton;
 
     private LinearLayout loggedOutView;
@@ -69,6 +71,7 @@ public class ProfileFragment extends Fragment {
         addressBookTextView = view.findViewById(R.id.addressBookTextView);
         settingsTextView = view.findViewById(R.id.settingsTextView);
         adminProductManagementTextView = view.findViewById(R.id.adminProductManagementTextView);
+        adminOrderManagementTextView = view.findViewById(R.id.adminOrderManagementTextView);
         customerSupportTextView = view.findViewById(R.id.customerSupportTextView);
         logoutButton = view.findViewById(R.id.logoutButton);
 
@@ -127,6 +130,20 @@ public class ProfileFragment extends Fragment {
             });
         });
 
+        adminOrderManagementTextView.setOnClickListener(v -> {
+            AdminUtils.checkAdminRole(requireContext(), new AdminUtils.AdminRoleCallback() {
+                @Override
+                public void onAdmin() {
+                    startActivity(new Intent(requireContext(), AdminOrderListActivity.class));
+                }
+
+                @Override
+                public void onNotAdmin(String message) {
+                    Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show();
+                }
+            });
+        });
+
         customerSupportTextView.setOnClickListener(v -> showCustomerSupportDialog());
 
         logoutButton.setOnClickListener(v -> logoutUser());
@@ -154,11 +171,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onAdmin() {
                 adminProductManagementTextView.setVisibility(View.VISIBLE);
+                adminOrderManagementTextView.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onNotAdmin(String message) {
                 adminProductManagementTextView.setVisibility(View.GONE);
+                adminOrderManagementTextView.setVisibility(View.GONE);
             }
         });
     }

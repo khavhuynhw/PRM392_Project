@@ -193,4 +193,11 @@ public interface ShopDao {
 
     @Query("SELECT * FROM users WHERE userId = :userId LIMIT 1")
     UserEntity getUserByIdForRoleCheck(int userId);
+
+    @Transaction
+    @Query("SELECT * FROM orders ORDER BY orderDate DESC")
+    LiveData<List<OrderWithProducts>> getAllOrdersWithProducts();
+
+    @Query("UPDATE orders SET status = :newStatus WHERE orderId = :orderId")
+    void updateOrderStatus(long orderId, String newStatus);
 }

@@ -64,6 +64,12 @@
             android:name=".ui.admin.AdminProductFormActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.admin.AdminOrderListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.AdminOrderDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
 

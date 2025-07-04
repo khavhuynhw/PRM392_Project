@@ -27,6 +27,15 @@ import java.util.Locale;
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 
     private List<OrderWithProducts> orderList;
+    private OnItemClickListener onItemClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(OrderWithProducts order);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
+    }
 
     public OrderAdapter(ArrayList<OrderWithProducts> orderList) {
         this.orderList = orderList;
@@ -89,6 +98,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.orderHeaderLayout.setOnClickListener(v -> {
             boolean isVisible = holder.detailSectionLayout.getVisibility() == View.VISIBLE;
             holder.detailSectionLayout.setVisibility(isVisible ? View.GONE : View.VISIBLE);
+            if (onItemClickListener != null && !isVisible) {
+                onItemClickListener.onItemClick(orderWithProducts);
+            }
         });
     }
 
