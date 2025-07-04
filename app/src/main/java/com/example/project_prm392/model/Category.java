@@ -12,6 +12,10 @@ public class Category {
     private String name;
     private int imageResourceId;
 
+    public int getCategoryId() {
+        return categoryId;
+    }
+
     public Category() {
     }
 

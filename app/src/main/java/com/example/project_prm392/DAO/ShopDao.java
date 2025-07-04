@@ -55,6 +55,12 @@ public interface ShopDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertProduct(Product product);
 
+    @Update
+    void updateProduct(Product product);
+
+    @Delete
+    void deleteProduct(Product product);
+
     @Query("SELECT * FROM products ORDER BY name ASC")
     LiveData<List<Product>> getAllProducts();
 
@@ -63,6 +69,9 @@ public interface ShopDao {
 
     @Query("SELECT * FROM products WHERE productId = :id LIMIT 1")
     LiveData<Product> getProductById(int id);
+
+    @Query("SELECT * FROM products WHERE productId = :id LIMIT 1")
+    Product getProductByIdNow(int id);
 
     @Query("SELECT * FROM products WHERE name LIKE '%' || :query || '%'")
     LiveData<List<Product>> searchProducts(String query);
@@ -177,4 +186,11 @@ public interface ShopDao {
 
     @Query("DELETE FROM order_product_cross_ref")
     void deleteAllOrderProductCrossRef();
+
+    //================== Admin Role Checking ==================
+    @Query("SELECT role FROM users WHERE userId = :userId LIMIT 1")
+    String getUserRole(int userId);
+
+    @Query("SELECT * FROM users WHERE userId = :userId LIMIT 1")
+    UserEntity getUserByIdForRoleCheck(int userId);
 }

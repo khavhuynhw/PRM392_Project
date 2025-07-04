@@ -20,7 +20,7 @@ import com.example.project_prm392.model.UserEntity;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {UserEntity.class, Category.class, Product.class, Address.class, CartItem.class, Order.class, OrderProductCrossRef.class}, version = 1, exportSchema = false)
+@Database(entities = {UserEntity.class, Category.class, Product.class, Address.class, CartItem.class, Order.class, OrderProductCrossRef.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract ShopDao shopDao();
@@ -37,6 +37,7 @@ public abstract class AppDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                                     AppDatabase.class, "shop_database")
                             .addCallback(sRoomDatabaseCallback)
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
@@ -69,8 +70,17 @@ public abstract class AppDatabase extends RoomDatabase {
                 user.fullName = "Trần Thị Bích Hảo";
                 user.email = "bichhao.dev@example.com";
                 user.password = "123456"; // Nhớ mã hóa trong ứng dụng thật
+                user.role = "user"; // Default role
                 // Giả sử sau khi insert, user này sẽ có userId là 1
                 dao.insertUser(user);
+
+                // Thêm admin user
+                UserEntity adminUser = new UserEntity();
+                adminUser.fullName = "Admin User";
+                adminUser.email = "admin@example.com";
+                adminUser.password = "admin123";
+                adminUser.role = "admin";
+                dao.insertUser(adminUser);
 
 
                 // --- 2. Thêm Địa chỉ mẫu cho người dùng (userId = 1) ---

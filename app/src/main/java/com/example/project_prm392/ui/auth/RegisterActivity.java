@@ -79,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
         newUser.fullName = fullName;
         newUser.email = email;
         newUser.password = password; // Trong ứng dụng thật, bạn nên mã hóa mật khẩu này
+        newUser.role = "user"; // Default role for new users
 
         // --- Bước 3: Thực hiện thao tác với DB trên luồng nền ---
         ExecutorService executor = Executors.newSingleThreadExecutor();
