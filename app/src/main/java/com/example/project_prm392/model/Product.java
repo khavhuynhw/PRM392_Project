@@ -76,11 +76,4 @@ public class Product implements Parcelable { // <-- Implement Parcelable
     public int getImageResourceId() { return imageResourceId; }
     public int getProductCategoryId() { return productCategoryId; }
 
-    // Add setters for admin functionality
-    public void setName(String name) { this.name = name; }
-    public void setPrice(double price) { this.price = price; }
-    public void setUnit(String unit) { this.unit = unit; }
-    public void setImageResourceId(int imageResourceId) { this.imageResourceId = imageResourceId; }
-    public void setProductCategoryId(int productCategoryId) { this.productCategoryId = productCategoryId; }
-
 }

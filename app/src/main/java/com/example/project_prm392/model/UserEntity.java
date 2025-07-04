@@ -11,5 +11,4 @@ public class UserEntity {
     public String fullName;
     public String email;
     public String password;
-    public String role; // "admin" or "user"
 }

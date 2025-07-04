@@ -2,10 +2,3 @@
 plugins {
     alias(libs.plugins.android.application) apply false
 }
-
-allprojects {
-    tasks.withType<JavaCompile> {
-        sourceCompatibility = JavaVersion.VERSION_17.toString()
-        targetCompatibility = JavaVersion.VERSION_17.toString()
-    }
-}

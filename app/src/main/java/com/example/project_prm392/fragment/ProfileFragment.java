@@ -25,8 +25,6 @@ import com.example.project_prm392.ui.auth.LoginActivity;
 import com.example.project_prm392.ui.cart.OrderHistoryActivity;
 import com.example.project_prm392.ui.profile.AddressBookActivity;
 import com.example.project_prm392.ui.profile.SettingsActivity;
-import com.example.project_prm392.ui.admin.AdminProductListActivity;
-import com.example.project_prm392.utils.AdminUtils;
 
 public class ProfileFragment extends Fragment {
 
@@ -36,7 +34,6 @@ public class ProfileFragment extends Fragment {
     private TextView customerSupportTextView;
 
     private TextView orderHistoryTextView, addressBookTextView, settingsTextView;
-    private TextView adminProductManagementTextView;
     private Button logoutButton;
 
     private LinearLayout loggedOutView;
@@ -68,7 +65,6 @@ public class ProfileFragment extends Fragment {
         orderHistoryTextView = view.findViewById(R.id.orderHistoryTextView);
         addressBookTextView = view.findViewById(R.id.addressBookTextView);
         settingsTextView = view.findViewById(R.id.settingsTextView);
-        adminProductManagementTextView = view.findViewById(R.id.adminProductManagementTextView);
         customerSupportTextView = view.findViewById(R.id.customerSupportTextView);
         logoutButton = view.findViewById(R.id.logoutButton);
 
@@ -113,20 +109,6 @@ public class ProfileFragment extends Fragment {
             startActivity(new Intent(requireContext(), SettingsActivity.class));
         });
 
-        adminProductManagementTextView.setOnClickListener(v -> {
-            AdminUtils.checkAdminRole(requireContext(), new AdminUtils.AdminRoleCallback() {
-                @Override
-                public void onAdmin() {
-                    startActivity(new Intent(requireContext(), AdminProductListActivity.class));
-                }
-
-                @Override
-                public void onNotAdmin(String message) {
-                    Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show();
-                }
-            });
-        });
-
         customerSupportTextView.setOnClickListener(v -> showCustomerSupportDialog());
 
         logoutButton.setOnClickListener(v -> logoutUser());
@@ -144,23 +126,6 @@ public class ProfileFragment extends Fragment {
 
         // Gán ảnh đại diện
         avatarImageView.setImageResource(R.drawable.ic_profile);
-
-        // Check if user is admin and show admin options
-        checkAdminRole();
-    }
-
-    private void checkAdminRole() {
-        AdminUtils.checkAdminRole(requireContext(), new AdminUtils.AdminRoleCallback() {
-            @Override
-            public void onAdmin() {
-                adminProductManagementTextView.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onNotAdmin(String message) {
-                adminProductManagementTextView.setVisibility(View.GONE);
-            }
-        });
     }
 
     private void logoutUser() {

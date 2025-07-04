@@ -106,7 +106,6 @@ public class LoginActivity extends AppCompatActivity {
         editor.putInt("userId", user.userId);
         editor.putString("userName", user.fullName);
         editor.putString("userEmail", user.email);
-        editor.putString("userRole", user.role != null ? user.role : "user");
         editor.apply();
 
         Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
