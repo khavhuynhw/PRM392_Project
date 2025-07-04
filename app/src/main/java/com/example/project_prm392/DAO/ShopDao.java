@@ -47,6 +47,12 @@ public interface ShopDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertCategory(Category category);
 
+    @Update
+    void updateCategory(Category category);
+
+    @Delete
+    void deleteCategory(Category category);
+
     @Query("SELECT * FROM categories ORDER BY name ASC")
     LiveData<List<Category>> getAllCategories();
 

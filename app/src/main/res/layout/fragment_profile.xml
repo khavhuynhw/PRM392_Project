@@ -120,6 +120,22 @@
     android:visibility="gone"
     tools:visibility="visible"/>
 
+<TextView
+    android:id="@+id/adminCategoryManagementTextView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawablePadding="16dp"
+    android:gravity="center_vertical"
+    android:padding="16dp"
+    android:text="Quản lý danh mục (Admin)"
+    android:textSize="16sp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:drawableStart="@android:drawable/ic_menu_sort_by_size"
+    android:visibility="gone"
+    tools:visibility="visible"/>
+
     <TextView
         android:id="@+id/customerSupportTextView"
         android:layout_width="match_parent"

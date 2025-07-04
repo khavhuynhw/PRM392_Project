@@ -70,6 +70,12 @@
             android:name=".ui.admin.AdminOrderDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.admin.AdminCategoryListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.admin.AdminCategoryFormActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
 
